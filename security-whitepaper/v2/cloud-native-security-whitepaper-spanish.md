@@ -216,22 +216,23 @@ de infraestructura. Las malas configuraciones claves a tener en cuenta incluyen:
 
 * Configuraciones para limitar el uso de recursos
 
-##### Dynamic Analysis
+##### Análisis Dinámico
 
-Dynamic analysis of deployed infrastructure may include detecting Role-based Access Control (RBAC) and IAM configuration
-drift, validating the expected network attack surface, and ensuring that a SOC can detect unusual behavior in dedicated
-test environments to configure alerting for production. Dynamic analysis is considered to be a part of testing, however,
-it is expected to occur in a non-production runtime environment.
+El análisis dinámico de infraestructura desplegada puede incluir la detección de variaciones en la configuración del
+Control de Acceso Basado en Roles (según sus siglas en Inglés, RBAC) y Administración de Identidades (según sus siglas en Inglés, IAM),
+validando la superficie de ataque de red esperada, y asegurando que un Centro de Operaciones de Seguridad (según sus siglas en Inglés, SOC)
+pueda detectar comportamientos inusuales en ambientes de pruebas dedicados para configurar alertas para ambientes de producción.
+El análisis dinámico es considerado parte del testeo, sin embargo, se espera que ocurra en un ambiente no productivo.
 
-##### Security Tests
+##### Pruebas de seguridad
 
-Automated security testing of applications and infrastructure should be an integral focus within security teams. Test
-suites should be continuously updated to replicate threats in-line with the organizational threat model and can be
-reused for security regression testing as the system evolves. Automated security tests increase security and release
-velocity by removing manual security gates, such as validation and manual control implementation at a single checkpoint,
-which is time-consuming and inadequate. Automated security testing also demonstrates control efficacy on demand by
-explicitly attempting to carry out the threats, thus improving the system’s security and adherence to any embedded
-compliance requirements in real-time.
+Las pruebas de seguridad automatizadas de aplicaciones e infraestructura deberían ser un objetivo integral dentro de los equipos de seguridad.
+Los grupos de pruebas deberían ser actualizados continuamente para replicar amenazas alineadas con el modelo de amenazas de la organización y
+puedan ser reutilizadas para pruebas de regresión de seguridad a medida que el sistema evoluciona. Las pruebas de seguridad automatizadas
+incrementan la seguridad y la velocidad de entrega mediante la remoción de pruebas manuales de seguridad, como validaciones e implementaciones
+de control manuales en un punto determinado, las cuales consumen demasiado tiempo y son inadecuadas.
+Las pruebas de seguridad automatizadas también demuestran eficacia de control explicitamente intentando ejecutar las amenazas,
+incrementando así la seguridad del sistema y su adherencia a cualquier requerimiento legal en tiempo real.
 
 #### Artifacts & Images
 ##### Registry Staging
