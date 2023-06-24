@@ -194,26 +194,27 @@ Hardening of infrastructure and workloads should be supported by comprehensive t
 hardening as the system matures. Tests to verify hardening has occurred should run during the build, but also at
 deployment to evaluate any changes or regressions that may have occurred throughout the lifecycle.
 
-##### Static Analysis and Security Testing
+##### Análisis Estático y Pruebas de Seguridad
 
-Static analysis of IaC, application manifests, and software code provide linting, identification of misconfigurations,
-and vulnerabilities of the specific component and will not include context of the surrounding components in analysis. It
-is important to note that individual analysis is important, but should not be the only form of analysis. IaC code should
-be subject to the similar pipeline policy controls as are application workloads.
+El análisis estático de Infraestructura como Código (según sus siglas en Inglés, IaC), los manifiestos de aplicaciones, y el código de software proveen testeos, 
+identificación de desconfiguraciones, y vulnerabilidades de componentes específicos y no incluirán el contexto de los componentes
+adicionales en el análisis.
+Es importante notar que el análisis individual es muy relevante, pero no debería ser el único tipo de análisis. El código
+de IaC debería estar sujeto a los mismos controles a los que son sometidas las aplicaciones.
 
-IaC is an increasingly popular way for organizations to deploy cloud and container infrastructure. Insecure
-configurations in IaC templates will naturally lead to security gaps in the deployed infrastructure. These templates
-should therefore be scanned for characteristics that compromise security, before deploying the application and
-infrastructure artifacts. Key misconfigurations to keep an eye out for include:
+La Infraestructura como Código es una manera muy popular para las organizaciones para desplegar infraestructura en la nube y en contenedores.
+Las configuraciones inseguras en plantillas de IaC naturalmente originarán riesgos de seguridad en la infraestructura desplegada. Estas plantillas
+deberían entonces ser escaneadas para detectar características que comprometen a la seguridad, previamente a desplegar una aplicación o componentes
+de infraestructura. Las malas configuraciones claves a tener en cuenta incluyen:
 
-* Vulnerabilities contained within images specified in the application manifests
+* Vulnerabilidades presentes en las imágenes especificadas en las plantillas de la aplicación
 
-* Settings that do not respect the principle of the least privilege, such as containers that can escalate privileges or
-  overly lax firewall rules
+* Configuraciones que no respetan el principio de menor privilegio, como contenedores que pueden escalar privilegios o
+  sobrepasar reglas de cortafuegos laxas
 
-* Identification of the security contexts and system calls, which can compromise a system
+* Identificación de contextos de seguridad y llamadas de sistema, que pueden comprometer un sistema
 
-* Resource limit settings
+* Configuraciones para limitar el uso de recursos
 
 ##### Dynamic Analysis
 
