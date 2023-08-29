@@ -171,28 +171,29 @@ Con respecto a los objetivos de las garantías de seguridad, se deben evaluar la
 _¿Cuáles son las restricciones mínimas con las que debería cumplir el ecosistema de ejecución en tiempo de ejecución?_
 
 #### Etapa de Pruebas 
-Cloud native applications should be subjected to the same suite and standard of quality testing as traditional
-applications. These include the concepts of clean code, adherence to
-the [Test Pyramid](https://martinfowler.com/articles/practical-test-pyramid.html), application security scanning and
-linting through static application security testing (SAST), dependency analysis and scanning, dynamic application
-security testing (DAST), application instrumentation, and full infrastructure with tests available to developers in
-local workflows. Automated test results should map back to requirements for dual attestation (developer and tool) for
-real-time security assurance to security and compliance teams.
 
-Once a security misconfiguration has been identified (e.g. an incorrect firewall or routing rule), if root cause
-analysis determines that it has a reasonable chance of recurring, the developers should write an automated test to
-prevent regression of the defect. At the test failure, teams will receive feedback to correct the bug, and with the next
-merge, the test will pass (assuming it was corrected). Doing so defends against regression due to future changes to that
-code.
+Las aplicaciones Cloud native deben estar sujetas a las mismas herramientas y estándares de calidad como las aplicaciones
+tradicionales. Estos incluyen los conceptos de código limpio, adhesión a
+la [Piramide de pruebas](https://martinfowler.com/articles/practical-test-pyramid.html), escaneos de seguridad de aplicaciones y
+al estándar de pruebas estáticas de seguridad de aplicaciones (o en sus siglas en Inglés, SAST), análisis de dependencias y escaneos,
+pruebas dinámicas de seguridad de aplicaciones (o en sus siglas en Inglés, DAST), instrumentación de aplicación, e infraestructura con pruebas
+disponibles para desarrolladores en ciclos de trabajo locales. Los resultados de las pruebas automatizadas están conectadas a ciertos requerimientos
+apuntados a la doble evidencia (desarrollador y herramienta) para el control en tiempo real de seguridad para los equipos de seguridad y cumplimentación.
 
-Unit testing of infrastructure is a preventative control, and targets entities and inputs defined in Infrastructure as
-Code (IaC) configuration. Security testing of built infrastructure is a detective control and combines assurance,
-historical regressions, and unexpected configuration detection (firewall rules open to the world, loosely-privileged
-Identity & Access Management (IAM) policies, unauthenticated endpoints, etc.)
+Una vez que una mala configuración de seguridad ha sido identificada (e.j. una regla incorrecta de firewall o enrutamiento), si el análisis de
+causa raíz determina que hay una posibilidad razonable de recurrencia, los desarrolladores deberían escribir una prueba automatizado para
+prevenir la regresión de dicho defecto. Si esa prueba fallase, el equipo recibira una comunicación para corregir el defecto, y con la próxima
+fusión de código, la prueba será exitosa (asumiendo que el error fue corregido). De esta manera se defiende al código de regresiones debidas a futuros cambios
+de codigo.
 
-Hardening of infrastructure and workloads should be supported by comprehensive test suites, which allows for incremental
-hardening as the system matures. Tests to verify hardening has occurred should run during the build, but also at
-deployment to evaluate any changes or regressions that may have occurred throughout the lifecycle.
+Las pruebas unitarias de infraestructura son un control preventivo, y apunta a entidades y parámetros definidos en configuraciones de
+Infraestructura como Código (en sus siglas en Ingles, IaC). Las pruebas de seguridad sobre infraestructura ya desplegada es un control detectivo y combina chequeos,
+regresiones históricas, y detección de configuraciones no esperadas (reglas de firewall abiertas al mundo, políticas de Identidad y Manejo de Accesos (en sus siglas en Inglés IAM)
+con privilegios en demasía, puntos de acceso sin autenticación, etc).
+
+El endurecimiento de infraestructura y cargas de trabajo deben estar soportados por grupos de pruebas minuciosas, que facilitan el endurecimiento
+incremental conforme a la madurez del sistema. Las pruebas para verificar que el endurecimiento ha ocurrido deben ejecutarse durante el proceso de creación, pero también durante
+el despliegue para evaluar cualquier cambio o regresión que pudiera haber ocurrido durante el ciclo de vida.
 
 ##### Análisis Estático y Pruebas de Seguridad
 
