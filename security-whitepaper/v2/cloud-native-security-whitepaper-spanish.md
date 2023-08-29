@@ -235,51 +235,51 @@ de control manuales en un punto determinado, las cuales consumen demasiado tiemp
 Las pruebas de seguridad automatizadas también demuestran eficacia de control explicitamente intentando ejecutar las amenazas,
 incrementando así la seguridad del sistema y su adherencia a cualquier requerimiento legal en tiempo real.
 
-#### Artifacts & Images
-##### Registry Staging
+#### Artefactos e Imagenes
+##### Registro pre-productivo
 
-Due to the use of open source components that are often pulled from public sources, organizations should create several
-stages of registries in their pipelines. Only authorized developers should be able to pull base images from public
-registries and store them in an internal registry for wide consumption within the organization. It is also advised to
-have separate private registries for keeping development artifacts per team or group, and finally a staging or
-pre-production registry for images ready for production. This enables tighter control over the provenance and security
-of open source components, while enabling different types of testing for stages in the CI/CD chain.
+Debido al uso de componentes de codigo abierto que son habitualmente obtenidos desde fuentes publicas, las organizaciones deben crear varias
+estadios de registros en sus procesos. Solo desarrolladores autorizados deben poder obtener imagenes base desde registros
+publicos y almacenarlas en un registro interno para el futuro consumo dentro de la organizacion. Es tambien aconsejable tener
+registros privados aislados para almacenar artefactos de desarrollo por equipo o grupo, y finalmente un registro de pre-produccion
+para imagenes listas para produccion. Esto ofrece mayor control sobre la procedencia y seguridad
+sobre los componentes de codigo abierto, como asi tambien habilitando diferentes tipos de pruebas por etapas en la cadena de IC/DC.
 
-For any registry used, access control through a dedicated authentication and permission model must be implemented. Use
-mutually authenticated TLS for all registry connections (among other interactions within the architecture).
+Para cualquier registro utilizado, los controles de acceso a traves de autenticacion dedicada y un modelo de permisos deben ser implementados. Utilizar
+autenticacion mutua (o en su sigla en Ingles, TLS) para todas las conexiones del registro (entre otras interaciones dentro de la arquitectura).
 
-##### Signing, Trust, and Integrity
+##### Firmado, Confianza e Integridad
 
-Digital signing of image content at build time and validation of the signed data before use protects that image data
-from tampering between build and runtime, thus ensuring the integrity and provenance of an artifact. Confirmation starts
-with a process to indicate that an artifact was vetted and approved. The trust confirmation also includes verifying that
-the artifact has a valid signature. In the simplest case, each artifact can be signed by one signer to indicate a single
-testing and validation process that the artifact has gone through. However, the software supply chain is more complex in
-most cases, and creating a single artifact relies on multiple validation steps, thus, depending on a conglomerate of
-entities’ trust. Examples of this are:
+El firmado digital del contenido de una imagen en tiempo de creación y validación de los datos firmados antes del uso protege esos datos de imagen
+de ser modificados entre creación y tiempo de ejecución, por lo tanto asegurando la integridad y procedencia de un artefacto. La confirmación comienza
+con un proceso para indicar que un artefacto ha sido vetado y aprobado. La confirmación de confianza también incluye verificar que
+el artefacto tenga una firma válida. En el caso más simple, cada artefacto puede ser firmado por un firmante para indicar que el artefacto
+ha pasado por un proceso de prueba y validación. Sin embargo, la cadena de desarrollo de un software es más compleja en
+la mayoría de los casos y crear un artefacto simple requiere de multiples pasos de validacion, asi dependiendo de la confianza en un conglomerado de
+entidades. Ejemplos de esto:
 
-* Container image signing - the process of signing a container image manifest
+* Firma de imagenes de contenedores - el proceso de firmado de un manifiesto de la imagen de un container
 
-* Configuration file signing - signing of a config file, i.e. application config files
+* Firma de archivos de configuración - firmado de un archivo de configuración, por ejemplo configuraciones de aplicación
 
-* Package signing - Signing of a package of artifacts, like application packages
+* Firmado de paquetes - firma de artefactos de un paquete, e.j. paquetes de aplicación
 
-For generic software artifacts such as libraries or OCI artifacts, signing these artifacts indicates their provenance of
-approved usage by the organization. Verification of these artifacts is equally crucial in ensuring that only the
-authorized artifacts are allowed. It is strongly recommended that repositories require mutual authentication to
-introduce changes to images in registries or to commit code to repositories.
+Para artefactos genéricos de software como librerías o paquetes OCI, el firmado de los mismos indica su procedencia
+autorizada por la organización. La verificación de estos artefactos es igualmente crucial para asegurar que solo
+los artefactos autorizados serán permitidos. Está firmemente recomendado que los repositorios requieran autenticación mutua para
+introducir cambios a imágenes en registros o para agregar código a un repositorio.
 
-##### Encryption
+##### Encriptación
 
-Container Image Encryption encrypts a container image so that its contents are confidential. The container image
-contents are encrypted to ensure that they remain confidential for promotion from build time through runtime. In the
-event of a compromised distribution, the image’s registry contents remain secret, which can help for use cases such as
-protecting trade secrets or other confidential material.
+La Encriptación de Imágenes de Contenedores encripta una imagen de contenedor tal que su contenido es confidencial. El contenido de la imagen de contenedor
+es encriptado para asegurar que se mantenga confidencial para su promoción desde la creación hasta su ejecución. En el
+caso de una distribución comprometida, el contenido del registro de la imagen permanece secreto, lo que ayuda en casos como
+la protección de secretos financieros u otro material confidencial.
 
-Another common use of Container Image Encryption is to enforce container image authorization. When image encryption is
-coupled with key management and runtime environment attestation and/or authorization and credential distribution, it is
-possible to require that a container image can only run on particular platforms. Container image authorization is useful
-for compliance use cases such as geo-fencing or export control and digital rights media management.
+Otro caso común de la Encriptación de Imágenes de Contenedores es requerir la autorización de imágenes de contenedor. Cuando una encriptación de imagen
+se complementa con el manejo de llaves y atestiguación de entorno de ejecución y/o autorización y distribución de credenciales, es
+posible requerir que una imagen de contenedor sólo pueda ejecutarse en plataformas específicas. La autorización de imagenes de contenedores es útil
+para casos de uso de cumplimentación como lo que se conoce como geo-fencing o exportación y manejo de derechos de información.
 
 ### Deploy
 
