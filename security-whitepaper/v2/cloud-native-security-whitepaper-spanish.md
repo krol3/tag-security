@@ -281,47 +281,49 @@ se complementa con el manejo de llaves y atestiguación de entorno de ejecución
 posible requerir que una imagen de contenedor sólo pueda ejecutarse en plataformas específicas. La autorización de imagenes de contenedores es útil
 para casos de uso de cumplimentación como lo que se conoce como geo-fencing o exportación y manejo de derechos de información.
 
-### Deploy
+### Despliegue
 
 ![Figure 4](cnswp-images/cnswp-v2-security-structural-model-deploy.png)
 
 _Figure 4_
 
-The “Deploy” phase is responsible for incorporating a sequence of ‘pre-flight’ checks to ensure that the applications
-that will be deployed in the runtime environment conform and comply with organization-wide security and compliance
-policies.
+La fase de "Despliegue" es responsable de incorporar una secuencia de pruebas 'pre-flight' o de pre-producción para asegurar que las aplicaciones
+que serán desplegadas en el entorno de ejecución conforman y cumplen con las políticas de seguridad y cumplimentación de la organización.
 
-#### Pre-Flight Deployment Checks
-Before deploying a container image, organizations should verify the existence, applicability, and current state of:
+#### Pruebas de Despliegue Pre-Flight
 
-* Image signature and integrity
+Antes de desplegar una imagen de contenedor, las organizaciones deben verificar la existencia, aplicabilidad y estado actual de:
 
-* Image runtime policies (e.g absence of malware or critical vulnerabilities)
+* Firma de la imagen y su integridad
 
-* Container runtime policies (e.g absence of excessive privileges)
+* Políticas de ejecución de la imagen (e.j. ausencia de código malicioso o vulnerabilidades críticas)
 
-* Host vulnerability and compliance controls
+* Políticas de ejecución del contenedor (e.j. ausencia de privilegios excesivos)
 
-* Workload, application, and network security policies
+* Controles de vulnerabilidades y cumplimentacion de los servidores
 
-#### Observability & Metrics
-Instituting observability and metrics into cloud native architectures delivers security insights, so appropriate
-stakeholders can resolve and mitigate anomalies appearing in reporting; tools in this area can help collect and
-visualize this information. Through the use of behavioral and heuristic analysis, teams can detect and escalate
-outliers, suspicious events, and unexplained calls to appropriate stakeholders. Use of advanced machine learning and
-statistical modeling techniques that fall under artificial intelligence is encouraged to assist in behavioral and
-heuristic analysis development.
+* Politicas de carga de trabajo, aplicación y seguridad de red
 
-#### Incident Response & Mitigation
-An application should provide logs regarding authentication, authorization, actions, and failures. The developer should
-include this capability as part of planning and design phases. These elements provide a trail of evidence to follow when
-an investigation takes place and a root cause needs to be established.
+#### Observabilidad y Métricas
 
-Forensics capabilities are an integral part of any incident response and mitigation activity. They provide evidence to
-determine the root cause of an incident and provide feedback for any mitigation to be put in place. The short-lived
-nature of the container environment requires a more agile tool set to capture and analyze any evidence. Integrating
-forensics capabilities into an incident response plan and procedures will provide the means to acquire and process
-evidence, decrease the time to determine root cause, and minimize exposure to a compromise.
+Agregar observabilidad y métricas a las arquitecturas cloud native entrega conocimiento de seguridad, para que las
+partes interesadas puedan resolver y mitigar anomalías que aparecen en los reportes; las herramientas en este área pueden ayudar a recolectar y
+visualizar esta información. A través del uso de análisis heurístico y de comportamiento, los equipos pueden detectar y escalar
+eventos anormales y sospechosos, y llamadas sin explicación a ciertas partes interesadas. El uso de aprendizaje de máquina avanzado y
+técnicas de modelado estadístico que están comprendidas dentro de la inteligencia artificial es aconsejable para asistir en el desarrollo
+de análisis heurístico y de comportamiento.
+
+#### Respuesta inicial y Mitigación
+
+Una aplicación debe proveer información referente a la autenticación, autorización, acciones y fallas. El desarrollador debe
+incluir estas capacidades como parte de las fases de planificación y diseño. Estos elementos proveen un hilo de evidencia a seguir cuando
+ocurre una investigación y la causa raíz debe ser establecida.
+
+Las capacidades forenses son una parte integral de cualquier actividad de respuesta y mitigación a incidentes. Proveen evidencia para
+determinar la causa raíz de un incidente y proveen información para que una mitigación sea agregada. La naturaleza efímera
+del entorno de un contenedor requiere un grupo de herramientas más ágiles para capturar y analizar cualquier evidencia. Integrar
+capacidades forenses al planeamiento y procedimientos de respuesta a incidentes provee los medios para adquirir y procesar
+evidencia, decrementar el tiempo para determinar una causa raíz y minimizar la exposición a un compromiso.
 
 ### Runtime Environment
 
