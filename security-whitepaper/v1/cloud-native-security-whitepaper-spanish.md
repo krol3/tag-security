@@ -225,7 +225,9 @@ distribuida o implementada en un entorno de tiempo de ejecución basado en la nu
 _Figura 1_
 
 El stack de cloud native se compone de las capas de base, ciclo de vida y entorno. El stack de cloud native se puede adoptar utilizando diferentes modelos de implementación: IaaS, PaaS, CaaS y FaaS. Cada modelo de implementación proporciona abstracciones adicionales que facilitan la gestión y el funcionamiento de los entornos de cloud native. Dado que algunos de estos modelos se consideran bien conocidos y se han utilizado durante años, nos centraremos en los modelos específicos de cloud native.
+
 El modelo de contenedores como servicio o Containers-as-a-Service (CaaS) permite a los usuarios orquestar y administrar contenedores, aplicaciones y clústeres aprovechando una plataforma de virtualización basada en contenedores, una interfaz de programación de aplicaciones (API) o una interfaz de administración de portal web. CaaS ayuda a los usuarios a construir aplicaciones en contenedores escalables con una política de seguridad integrada como código y ejecutarlas en una nube privada, centros de datos locales o una nube pública. CaaS ayuda a agilizar el proceso de creación de un contenedor. Con la orquestación y las implementaciones de microservicios, ayuda a las empresas a lanzar software más rápido y permite la portabilidad entre entornos híbridos y de múltiples nubes, lo que reduce la infraestructura y los costos operativos. El modelo CaaS ahorra costos, ya que ayuda a las empresas a simplificar la gestión de contenedores y les da la opción de pagar solo por los recursos de CaaS que desean y utilizan. CaaS tiene los contenedores como su recurso fundamental, mientras que para los entornos IaaS se utilizan máquinas virtuales (VM) y sistemas host de hardware bare metal.
+
 Las funciones como servicio o Functions-as-a-Service (FaaS) es otro modelo de implementación cloud native, un tipo de servicio en la nube que permite a los usuarios empresariales ejecutar código en respuesta a eventos sin la infraestructura compleja típicamente asociada con la creación y el lanzamiento de microservicios. El alojamiento de una aplicación de software en la nube generalmente requiere el provisionamiento y la administración de un entorno virtual, la administración del sistema operativo y los componentes web, etc. Con FaaS, el proveedor de servicio de la nube maneja automáticamente el hardware físico, el sistema operativo de la máquina virtual y la administración del software del servidor web. Permitiendo así a los usuarios centrarse en funciones individuales en el código de microservicios mientras pagan por los recursos que se utilizan y aprovechan la elasticidad de los recursos que proporciona la nube.
 
 ## Ciclo de Vida
@@ -313,7 +315,7 @@ Los manifiestos de aplicaciones describen las configuraciones necesarias para la
 En cuanto a las imágenes de contenedores, se puede pensar en reforzar el manifiesto de la aplicación contenerizada tanto en la fase de compilación como en el tiempo de ejecución.
 Con respecto a los objetivos de las garantías de seguridad, se deben evaluar las siguientes preguntas:
 
-* ¿Cuáles son las restricciones mínimas con las que debería cumplir el ecosistema de ejecución en tiempo de ejecución?
+_¿Cuáles son las restricciones mínimas con las que debería cumplir el ecosistema de ejecución en tiempo de ejecución?_
 
 #### Etapa de Pruebas 
 
